@@ -1,0 +1,40 @@
+{
+  "name": "flexura-physio-booking",
+  "version": "1.0.0",
+  "description": "End-to-end appointment booking system for Flexura Physio Care",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "test": "node --test tests/*.test.js",
+    "seed": "node server/seed-reset.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Udith920/Mintu.git"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Udith920/Mintu/issues"
+  },
+  "homepage": "https://github.com/Udith920/Mintu#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "better-sqlite3": "^13.0.3",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^18.0.4",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.7.0",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "nodemailer": "^10.0.11"
+  },
+  "devDependencies": {
+    "supertest": "^7.3.0"
+  },
+  "engines": {
+    "node": ">=18.18"
+  },
+  "private": true
+}
