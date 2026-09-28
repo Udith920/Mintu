@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Portal – Flexura Physio Care</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0b2b28">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="admin" data-no-wa="1">
+  <div id="login" class="auth-wrap hidden">
+    <div class="card">
+      <div class="brand" style="margin-bottom:18px"><span class="brand-mark">F</span><span><strong>Flexura</strong> <span class="brand-sub">Admin portal</span></span></div>
+      <form id="login-form">
+        <div class="field"><label for="a-email">Email</label><input id="a-email" name="email" type="email" autocomplete="username" required></div>
+        <div class="field"><label for="a-pass">Password</label><input id="a-pass" name="password" type="password" autocomplete="current-password" required></div>
+        <div class="error-text" id="login-err"></div>
+        <button class="btn btn-primary btn-block" type="submit">Log in</button>
+        <p class="small muted center" style="margin:14px 0 0"><a href="/">← Back to website</a></p>
+      </form>
+    </div>
+  </div>
+
+  <div id="shell" class="admin-shell hidden">
+    <aside class="admin-side">
+      <a href="/" class="brand"><span class="brand-mark">F</span><span><strong>Flexura</strong></span></a>
+      <nav id="admin-nav"></nav>
+      <div class="who"><div id="who"></div><a href="/" target="_blank">View website ↗</a><br><button class="linklike" id="logout" style="color:#99f6e4">Log out</button></div>
+    </aside>
+    <main class="admin-main">
+      <div class="admin-top">
+        <div class="row"><button class="btn btn-ghost btn-sm admin-menu-btn" id="menu-btn" aria-label="Menu">☰</button><h1 id="page-title"></h1></div>
+        <div class="row" id="page-actions"></div>
+      </div>
+      <div id="page"></div>
+    </main>
+  </div>
+  <script src="/js/common.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>

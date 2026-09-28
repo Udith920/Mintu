@@ -1,0 +1,13 @@
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    env_file: .env
+    environment:
+      DB_FILE: /data/flexura.db
+    volumes:
+      - flexura-data:/data
+    restart: unless-stopped
+volumes:
+  flexura-data:

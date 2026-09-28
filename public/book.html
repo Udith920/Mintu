@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book an Appointment – Flexura Physio Care</title>
+  <meta name="theme-color" content="#0f766e">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header id="site-header"></header>
+  <main class="container">
+    <div class="page-head">
+      <h1 style="font-size:2rem">Book your appointment</h1>
+      <p class="muted">Real-time availability · Instant confirmation · Prices in ₹ INR</p>
+    </div>
+
+    <div class="booking-layout">
+      <div class="card">
+        <ol class="stepper" id="stepper">
+          <li data-step="1">1. Treatment</li>
+          <li data-step="2">2. Therapist &amp; visit</li>
+          <li data-step="3">3. Date &amp; time</li>
+          <li data-step="4">4. Your details</li>
+          <li data-step="5">5. Review &amp; pay</li>
+        </ol>
+
+        <!-- Step 1 -->
+        <section class="step" data-step="1">
+          <div class="row between">
+            <h2 style="font-size:1.3rem;margin:0">What do you need help with?</h2>
+            <button class="btn btn-ghost btn-sm" id="use-credit-btn" type="button">🎟️ I have a package code</button>
+          </div>
+          <div id="credit-box" class="alert alert-info hidden" style="margin-top:14px">
+            <div class="grid-2">
+              <div class="field"><label for="credit-code">Package code</label><input id="credit-code" placeholder="PK-XXXXXX" autocomplete="off"></div>
+              <div class="field"><label for="credit-phone">Registered mobile</label><input id="credit-phone" inputmode="numeric" placeholder="10-digit mobile"></div>
+            </div>
+            <button class="btn btn-primary btn-sm" id="credit-apply" type="button">Apply package</button>
+            <div id="credit-status" class="small" style="margin-top:8px"></div>
+          </div>
+          <input type="search" class="search" id="treatment-search" placeholder="Search e.g. back pain, knee, stroke, pregnancy…" style="margin-top:16px" aria-label="Search treatments">
+          <div class="option-grid" id="treatment-list"><div class="spinner"></div></div>
+        </section>
+
+        <!-- Step 2 -->
+        <section class="step" data-step="2">
+          <h2 style="font-size:1.3rem">How would you like to be treated?</h2>
+          <div class="option-grid" id="mode-list"></div>
+
+          <h3 style="margin-top:26px">Choose your physiotherapist</h3>
+          <div class="option-grid" id="therapist-list"></div>
+
+          <div id="package-section">
+            <h3 style="margin-top:26px">Sessions</h3>
+            <p class="muted small">Most conditions need several sessions. Buy a package to save. Remaining sessions can be booked any time with your package code.</p>
+            <div class="option-grid" id="package-list"></div>
+          </div>
+        </section>
+
+        <!-- Step 3 -->
+        <section class="step" data-step="3">
+          <h2 style="font-size:1.3rem">Pick a date &amp; time <span class="muted small" style="font-weight:400">(IST)</span></h2>
+          <div class="cal-nav">
+            <button class="btn btn-ghost btn-sm" id="days-prev" type="button">← Earlier</button>
+            <strong id="days-label"></strong>
+            <button class="btn btn-ghost btn-sm" id="days-next" type="button">Later →</button>
+          </div>
+          <div class="days" id="days"></div>
+          <div id="slots-wrap" style="margin-top:8px"></div>
+        </section>
+
+        <!-- Step 4 -->
+        <section class="step" data-step="4">
+          <h2 style="font-size:1.3rem">Patient details</h2>
+          <div id="login-hint" class="alert alert-info small hidden">Have an account? <a href="/account?next=/book">Log in</a> to track all your bookings in one place (optional).</div>
+          <form id="details-form" novalidate>
+            <div class="grid-2">
+              <div class="field"><label for="f-name">Full name *</label><input id="f-name" name="patient_name" autocomplete="name" required></div>
+              <div class="field"><label for="f-phone">Mobile number *</label><input id="f-phone" name="phone" inputmode="numeric" autocomplete="tel" placeholder="98765 43210" required></div>
+              <div class="field"><label for="f-email">Email *</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+              <div class="grid-2" style="gap:0 12px">
+                <div class="field"><label for="f-age">Age</label><input id="f-age" name="age" type="number" min="0" max="120"></div>
+                <div class="field"><label for="f-gender">Gender</label>
+                  <select id="f-gender" name="gender"><option value="">Select</option><option value="female">Female</option><option value="male">Male</option><option value="other">Other</option></select></div>
+              </div>
+            </div>
+            <div class="field hidden" id="address-field"><label for="f-address">Home visit address *</label>
+              <textarea id="f-address" name="address" placeholder="House/flat no., street, area, city, PIN code"></textarea></div>
+
+            <h3 style="margin-top:10px">Pain assessment <span class="hint muted small" style="font-weight:400">(helps your therapist prepare)</span></h3>
+            <div class="field"><label>Where does it hurt?</label><div class="body-areas" id="body-areas"></div></div>
+            <div class="field"><label>Pain level: <span id="pain-val" class="muted">not set</span></label><div class="pain-scale" id="pain-scale"></div>
+              <div class="row between small muted" style="margin-top:4px"><span>No pain</span><span>Worst pain</span></div></div>
+            <div class="field"><label for="f-history">Medical history / surgeries <span class="hint">(optional)</span></label>
+              <textarea id="f-history" name="medical_history" placeholder="e.g. Diabetes, knee replacement in 2023, MRI shows L4-L5 disc bulge"></textarea></div>
+            <div class="field"><label for="f-notes">Anything else? <span class="hint">(optional)</span></label>
+              <textarea id="f-notes" name="notes" placeholder="Preferred language, accessibility needs…"></textarea></div>
+          </form>
+        </section>
+
+        <!-- Step 5 -->
+        <section class="step" data-step="5">
+          <h2 style="font-size:1.3rem">Review &amp; confirm</h2>
+          <div id="review"></div>
+          <div id="coupon-wrap" class="field" style="margin-top:18px">
+            <label for="coupon">Coupon code</label>
+            <div class="input-group"><input id="coupon" placeholder="e.g. WELCOME10" autocomplete="off"><button class="btn btn-ghost" id="coupon-apply" type="button">Apply</button></div>
+            <div id="coupon-msg" class="small" style="margin-top:6px"></div>
+          </div>
+          <div id="payment-wrap">
+            <h3 style="margin-top:18px">Payment</h3>
+            <div class="option-grid pay-options" id="pay-list"></div>
+          </div>
+          <label class="row small" style="margin-top:18px;font-weight:400;flex-wrap:nowrap;align-items:flex-start">
+            <input type="checkbox" id="agree" style="margin-top:3px">
+            <span>I confirm the details are correct and agree to the clinic’s cancellation policy (free cancellation up to <span data-cancel-hours>4</span> hours before the appointment).</span>
+          </label>
+        </section>
+
+        <div id="step-error" class="alert alert-error hidden" role="alert" style="margin-top:16px"></div>
+        <div class="step-actions">
+          <button class="btn btn-ghost" id="back-btn" type="button">← Back</button>
+          <button class="btn btn-primary" id="next-btn" type="button">Continue →</button>
+        </div>
+      </div>
+
+      <aside class="card summary-card" aria-live="polite">
+        <h3>Booking summary</h3>
+        <div id="summary"><p class="muted small">Select a treatment to get started.</p></div>
+      </aside>
+    </div>
+  </main>
+  <footer id="site-footer"></footer>
+  <script src="/js/common.js"></script>
+  <script src="/js/book.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flexura Physio Care – Book Physiotherapy Appointments Online</title>
+  <meta name="description" content="Book physiotherapy appointments online at Flexura Physio Care. Back pain, sports injury, post-surgical, neuro, paediatric rehab and more. In-clinic, home visit and online consultations.">
+  <meta name="theme-color" content="#0f766e">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="pill">✨ Trusted physiotherapy care</span>
+          <h1 style="margin-top:16px">Recover faster.<br><span>Move pain-free.</span></h1>
+          <p class="lead">Expert physiotherapists for back and neck pain, sports injuries, post-surgical and neurological rehabilitation. Visit the clinic, book a home visit or consult online.</p>
+          <div class="row" style="margin-top:24px">
+            <a href="/book" class="btn btn-primary btn-lg">Book an appointment</a>
+            <a href="#services" class="btn btn-ghost btn-lg">View treatments &amp; prices</a>
+          </div>
+          <div class="hero-stats">
+            <div><strong>10,000+</strong><span class="muted small">patients treated</span></div>
+            <div><strong>4.9★</strong><span class="muted small">Google rating</span></div>
+            <div><strong>36+</strong><span class="muted small">years combined experience</span></div>
+          </div>
+        </div>
+        <div class="hero-card quick-book">
+          <h3>Quick booking</h3>
+          <p class="muted small">Choose a treatment and see available slots instantly.</p>
+          <label for="qb-treatment">Treatment</label>
+          <select id="qb-treatment"><option value="">Loading…</option></select>
+          <label for="qb-mode">Visit type</label>
+          <select id="qb-mode">
+            <option value="clinic">🏥 In-clinic visit</option>
+            <option value="home">🏠 Home visit</option>
+            <option value="online">💻 Online video consult</option>
+          </select>
+          <div id="qb-price" class="summary-line total" style="margin:6px 0 14px"></div>
+          <button id="qb-go" class="btn btn-primary btn-block">Check available slots →</button>
+          <p class="small muted center" style="margin:12px 0 0">Free cancellation up to <span data-cancel-hours>4</span> hours before your appointment</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Treatments &amp; pricing</div>
+            <h2>Physiotherapy for every condition</h2>
+            <p class="muted">Transparent per-session pricing in Indian Rupees. Save more with multi-session packages.</p>
+          </div>
+        </div>
+        <div class="chips" id="category-chips" role="tablist" aria-label="Filter by category"></div>
+        <div class="service-grid" id="service-grid"><div class="spinner"></div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head"><div><div class="eyebrow">How it works</div><h2>Book in under 2 minutes</h2></div></div>
+        <div class="steps-grid">
+          <div class="card"><h3>Choose treatment</h3><p class="muted small">Pick from 18 specialised physiotherapy services, or start with an assessment.</p></div>
+          <div class="card"><h3>Pick a slot</h3><p class="muted small">See real-time availability for your preferred therapist, at the clinic, at home or online.</p></div>
+          <div class="card"><h3>Pay your way</h3><p class="muted small">Pay securely online with UPI, cards or netbanking, or pay at the clinic.</p></div>
+          <div class="card"><h3>Get better</h3><p class="muted small">Get instant confirmation, reminders and a personalised recovery plan.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="therapists">
+      <div class="container">
+        <div class="section-head"><div><div class="eyebrow">Our team</div><h2>Meet our physiotherapists</h2></div></div>
+        <div class="team-grid" id="team-grid"><div class="spinner"></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="packages">
+      <div class="container">
+        <div class="section-head"><div><div class="eyebrow">Save more</div><h2>Recovery packages</h2><p class="muted">Most conditions need 5–10 sessions. Prepay for a package and save. Use your package code to book each session.</p></div></div>
+        <div class="pkg-grid" id="pkg-grid"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head"><div><div class="eyebrow">Patient stories</div><h2>What our patients say</h2></div></div>
+        <div class="testimonials">
+          <blockquote class="card"><div class="stars">★★★★★</div><p>“After 3 years of lower back pain, 8 sessions with Dr. Ananya changed everything. I can finally sit through my workday without pain.”</p><strong>Sandeep K.</strong> <span class="muted small">· Software engineer</span></blockquote>
+          <blockquote class="card"><div class="stars">★★★★★</div><p>“The home-visit physio after my mother’s knee replacement was a blessing. Punctual, caring and very professional.”</p><strong>Meera R.</strong> <span class="muted small">· Caregiver</span></blockquote>
+          <blockquote class="card"><div class="stars">★★★★★</div><p>“Dr. Rohan got me back on the field 6 weeks after my ACL surgery. The return-to-sport plan was spot on.”</p><strong>Arjun P.</strong> <span class="muted small">· State-level footballer</span></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq">
+      <div class="container" style="max-width:820px">
+        <div class="section-head"><div><div class="eyebrow">FAQ</div><h2>Frequently asked questions</h2></div></div>
+        <details><summary>Do I need a doctor’s referral?</summary><p>No. You can book directly. If you have prescriptions, X-rays or MRI reports, please bring them to your first visit or share them during your online consultation.</p></details>
+        <details><summary>How many sessions will I need?</summary><p>It depends on your condition. Most musculoskeletal problems improve within 5–10 sessions. Your physiotherapist will share a plan after your first assessment.</p></details>
+        <details><summary>How does a home visit work?</summary><p>A qualified physiotherapist visits your home with the required equipment. A home-visit charge of <b data-home-fee>₹500</b> per visit applies on top of the treatment price.</p></details>
+        <details><summary>What payment options are available?</summary><p>Pay online with UPI (GPay, PhonePe, Paytm), debit or credit cards, or netbanking, all secured by Razorpay. You can also pay at the clinic with cash, UPI or card.</p></details>
+        <details><summary>Can I cancel or reschedule?</summary><p>Yes. Use the “Manage booking” page with your booking reference and mobile number, free of charge up to <span data-cancel-hours>4</span> hours before your appointment. Refunds for online payments are processed within 5–7 working days.</p></details>
+        <details><summary>Is physiotherapy covered by insurance?</summary><p>Many health insurance policies cover physiotherapy after hospitalisation. We provide itemised invoices for your claims.</p></details>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-band">
+          <div><h2 style="margin:0">Ready to start your recovery?</h2><p style="margin:6px 0 0;opacity:.9">Same-day appointments are often available.</p></div>
+          <a href="/book" class="btn btn-ghost btn-lg">Book now →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="/js/common.js"></script>
+  <script src="/js/home.js"></script>
+</body>
+</html>

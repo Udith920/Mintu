@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Account – Flexura Physio Care</title>
+  <meta name="theme-color" content="#0f766e">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header id="site-header"></header>
+  <main class="container" style="max-width:920px">
+    <div id="auth" class="auth-wrap hidden">
+      <div class="card">
+        <div class="tabs" role="tablist">
+          <button class="tab active" data-tab="login" role="tab">Log in</button>
+          <button class="tab" data-tab="register" role="tab">Create account</button>
+        </div>
+        <form id="login-form" novalidate>
+          <div class="field"><label for="li-email">Email</label><input id="li-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="li-pass">Password</label><input id="li-pass" name="password" type="password" autocomplete="current-password" required></div>
+          <div class="error-text" id="login-err"></div>
+          <button class="btn btn-primary btn-block" type="submit">Log in</button>
+          <p class="small muted center" style="margin:14px 0 0">Booked as a guest? <a href="/manage">Manage with booking reference</a></p>
+        </form>
+        <form id="register-form" class="hidden" novalidate>
+          <div class="field"><label for="rg-name">Full name</label><input id="rg-name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="rg-phone">Mobile number</label><input id="rg-phone" name="phone" inputmode="numeric" autocomplete="tel" required></div>
+          <div class="field"><label for="rg-email">Email</label><input id="rg-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="rg-pass">Password <span class="hint">(min 8 characters)</span></label><input id="rg-pass" name="password" type="password" autocomplete="new-password" minlength="8" required></div>
+          <div class="error-text" id="register-err"></div>
+          <button class="btn btn-primary btn-block" type="submit">Create account</button>
+          <p class="small muted" style="margin:14px 0 0">Earlier guest bookings made with the same email appear in your account automatically.</p>
+        </form>
+      </div>
+    </div>
+
+    <div id="dash" class="hidden">
+      <div class="page-head row between">
+        <div><h1 style="font-size:2rem;margin:0" id="hello"></h1><p class="muted" style="margin:4px 0 0">Your appointments, packages and profile</p></div>
+        <a href="/book" class="btn btn-primary">+ New booking</a>
+      </div>
+      <div class="card">
+        <div class="tabs" role="tablist">
+          <button class="tab active" data-dtab="upcoming">Upcoming</button>
+          <button class="tab" data-dtab="past">Past &amp; cancelled</button>
+          <button class="tab" data-dtab="packages">My packages</button>
+          <button class="tab" data-dtab="profile">Profile</button>
+        </div>
+        <div id="dtab-upcoming"></div>
+        <div id="dtab-past" class="hidden"></div>
+        <div id="dtab-packages" class="hidden"></div>
+        <div id="dtab-profile" class="hidden">
+          <dl class="kv" id="profile-kv"></dl>
+          <h3 style="margin-top:24px">Change password</h3>
+          <form id="pw-form" style="max-width:380px">
+            <div class="field"><label for="pw-cur">Current password</label><input id="pw-cur" type="password" autocomplete="current-password" required></div>
+            <div class="field"><label for="pw-new">New password</label><input id="pw-new" type="password" autocomplete="new-password" minlength="8" required></div>
+            <button class="btn btn-primary" type="submit">Update password</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer id="site-footer"></footer>
+  <script src="/js/common.js"></script>
+  <script src="/js/account.js"></script>
+</body>
+</html>

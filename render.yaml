@@ -1,0 +1,40 @@
+# One-click deploy on Render: https://render.com/deploy
+services:
+  - type: web
+    name: flexura-physio-booking
+    runtime: node
+    plan: starter            # a persistent disk requires a paid plan
+    buildCommand: npm ci --omit=dev
+    startCommand: node server/index.js
+    healthCheckPath: /api/health
+    disk:
+      name: flexura-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DB_FILE
+        value: /var/data/flexura.db
+      - key: JWT_SECRET
+        generateValue: true
+      - key: BASE_URL
+        sync: false
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: PAYMENT_DEMO
+        value: "false"
+      - key: RAZORPAY_KEY_ID
+        sync: false
+      - key: RAZORPAY_KEY_SECRET
+        sync: false
+      - key: RAZORPAY_WEBHOOK_SECRET
+        sync: false
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false

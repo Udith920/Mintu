@@ -41,7 +41,7 @@ function updateSettings(db, patch) {
 // Only what the public site needs.
 function publicSettings(s) {
   const keys = ['clinic_name', 'tagline', 'phone', 'whatsapp', 'email', 'address', 'maps_url', 'gstin', 'gst_percent',
-    'home_visit_fee', 'max_advance_days', 'cancel_window_hours', 'allow_pay_at_clinic'];
+    'home_visit_fee', 'max_advance_days', 'cancel_window_hours', 'allow_pay_at_clinic', 'pending_payment_ttl_min'];
   return Object.fromEntries(keys.map((k) => [k, s[k]]));
 }
 

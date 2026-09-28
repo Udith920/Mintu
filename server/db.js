@@ -260,6 +260,9 @@ function seed(db) {
     db.prepare("INSERT INTO users (name, email, password_hash, role) VALUES (?, ?, ?, 'admin')")
       .run(config.admin.name, config.admin.email, bcrypt.hashSync(config.admin.password, 10));
     console.log(`[db] Admin account created: ${config.admin.email}`);
+    if (!process.env.ADMIN_PASSWORD) {
+      console.warn('[db] WARNING: using the default admin password. Log in and change it immediately (Admin portal → Staff logins).');
+    }
   }
 }
 

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manage Booking – Flexura Physio Care</title>
+  <meta name="theme-color" content="#0f766e">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header id="site-header"></header>
+  <main class="container" style="max-width:860px">
+    <div id="lookup" class="hidden">
+      <div class="page-head"><h1 style="font-size:2rem">Manage your booking</h1>
+        <p class="muted">View, reschedule or cancel your appointment, download your invoice or add it to your calendar.</p></div>
+      <form class="card" id="lookup-form" style="max-width:520px">
+        <div class="field"><label for="l-ref">Booking reference</label><input id="l-ref" placeholder="FX-XXXXXX" autocomplete="off" required></div>
+        <div class="field"><label for="l-phone">Mobile number used for booking</label><input id="l-phone" inputmode="numeric" placeholder="10-digit mobile" required></div>
+        <div id="lookup-err" class="error-text"></div>
+        <button class="btn btn-primary btn-block" type="submit">Find my booking</button>
+        <p class="small muted center" style="margin:14px 0 0">Have an account? <a href="/account">See all your bookings</a></p>
+      </form>
+    </div>
+    <div id="view"></div>
+  </main>
+  <footer id="site-footer" class="no-print"></footer>
+  <script src="/js/common.js"></script>
+  <script src="/js/manage.js"></script>
+</body>
+</html>
